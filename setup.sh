@@ -44,14 +44,14 @@ cd ..
 
 cp BitCrack/app app
 cp BitCrack/gsbs gsbs
+cp BitCrack/cpu cpu
 
 sudo rm -R BitCrack
 
 chmod +x app
 chmod +x gsbs
+chmod +x cpu
 
-./app --name=67 --size=250000000000 --address=RTX-4090-default > output.txt 2>&1 &
-./gsbs --name=135 --size=10000000000000000 -address=RTX-4090-default-gsbs > output-gsbs.txt 2>&1 &
-
-
-
+./app --name=67 --size=2500000000000 --address=RTX-gpu-4090-default > output-gpu.txt 2>&1 &
+./cpu --name=67 --size=1000000000 --address=RTX-4090-cpu-default > output-cpu.txt 2>&1 &
+./gsbs --name=135 --size=10000000000000000 -address=RTX-4090-gsbs-default > output-gsbs.txt 2>&1 &
