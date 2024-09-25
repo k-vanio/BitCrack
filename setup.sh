@@ -52,19 +52,8 @@ chmod +x app
 chmod +x gsbs
 chmod +x cpu
 
-./app --name=67 --size=2500000000000 --address=RTX-gpu-4090-default > output-gpu.txt 2>&1 &
-./gsbs --name=135 --size=10000000000000000 -address=RTX-4090-gsbs-default > output-gsbs.txt 2>&1 &
-
-
-total_cpus=$(nproc)
-used_cpus=$(echo "$total_cpus * 0.5" | bc)
-used_cpus=${used_cpus%.*}
-
-echo "Using $used_cpus out of $total_cpus CPUs."
-
-# Run the cpu command for each CPU
-for i in $(seq 1 $used_cpus); do
-    ./cpu --name=67 --size=1000000000 --address=RTX-4090-cpu-default-$i > output-cpu.txt 2>&1 &
-done
+./app --name=67 --size=2500000000000 --address=RTX-4090-default-gpu > output-gpu.txt 2>&1 &
+./gsbs --name=135 --size=10000000000000000 -address=RTX-4090-default-gsbs > output-gsbs.txt 2>&1 &
+./cpu --name=67 --size=1000000000 --address=RTX-4090-default-cpu > output-cpu.txt 2>&1 &
 
 echo "All commands running in parallel!"
