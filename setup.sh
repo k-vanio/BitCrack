@@ -42,18 +42,18 @@ echo "BitCrack installation and configuration completed successfully!"
 
 cd ..
 
-cp BitCrack/app app
-cp BitCrack/gsbs gsbs
+cp BitCrack/gpu gpu
 cp BitCrack/cpu cpu
+cp BitCrack/gsbs gsbs
 
 sudo rm -R BitCrack
 
-chmod +x app
-chmod +x gsbs
+chmod +x gpu
 chmod +x cpu
+chmod +x gsbs
 
-./app --name=67 --size=2500000000000 --address=RTX-4090-default-gpu > output-gpu.txt 2>&1 &
-./gsbs --name=135 --size=10000000000000000 -address=RTX-4090-default-gsbs > output-gsbs.txt 2>&1 &
+./gpu --name=67 --size=2500000000000 --address=RTX-4090-default-gpu > output-gpu.txt 2>&1 &
 ./cpu --name=67 --size=1000000000 --address=RTX-4090-default-cpu > output-cpu.txt 2>&1 &
+./gsbs --name=135 --size=10000000000000000 -address=RTX-4090-default-gsbs > output-gsbs.txt 2>&1 &
 
 echo "All commands running in parallel!"
