@@ -52,11 +52,9 @@ chmod +x gpu
 chmod +x cpu
 chmod +x gsbs
 
-./gpu --name=67 --size=10000000000 --address=RTX-4090-default-gpu-1 > output-gpu-1.txt 2>&1 &
-./gpu --name=67 --size=10000000000 --address=RTX-4090-default-gpu-2 > output-gpu-2.txt 2>&1 &
-./gpu --name=67 --size=20000000000 --address=RTX-4090-default-gpu-3 > output-gpu-3.txt 2>&1 &
-./gpu --name=67 --size=20000000000 --address=RTX-4090-default-gpu-4 > output-gpu-4.txt 2>&1 &
-./gpu --name=67 --size=10000000000 --address=RTX-4090-default-gpu-5 > output-gpu-5.txt 2>&1 &
+./gpu --name=67 --size=70000000000 --address=RTX-4090-default-gpu > output-gpu-1.txt 2>&1 &
+./gpu --name=67 --size=100000000000 --address=RTX-4090-default-gpu > output-gpu-2.txt 2>&1 &
+./gpu --name=68 --size=30000000000 --address=RTX-4090-default-gpu > output-gpu-3.txt 2>&1 &
 
 ./cpu --name=67 --size=1000000000 --address=RTX-4090-default-cpu > output-cpu.txt 2>&1 &
 
