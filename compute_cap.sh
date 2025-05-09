@@ -5,6 +5,7 @@ GPU_NAME=$(nvidia-smi --query-gpu=name --format=csv,noheader,nounits | head -n 1
 
 # Mapeamento das GPUs para suas Compute Capabilities
 case "$GPU_NAME" in
+  *"RTX 5090"*) echo "120" ;; # NVIDIA GeForce RTX 5090
   *"RTX 4090"*) echo "89" ;;  # NVIDIA GeForce RTX 4090
   *"RTX 4080"*) echo "89" ;;  # NVIDIA GeForce RTX 4080
   *"RTX 4070"*) echo "89" ;;  # NVIDIA GeForce RTX 4070
